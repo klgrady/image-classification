@@ -12297,6 +12297,7 @@ height=250
 <span class="sd">    : return: Tensor for image input.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
+    <span class="c1"># Code comes straight out of class notes</span>
     <span class="n">pass_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
     <span class="n">pass_shape</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="nb">tuple</span><span class="p">(</span><span class="n">pass_shape</span><span class="p">)</span>
@@ -12399,6 +12400,7 @@ Keep Prob Tests Passed.
 <span class="sd">    : return: A tensor that represents convolution and max pooling of x_tensor</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
+    <span class="c1"># Code comes almost entirely out of class notes.</span>
     <span class="kn">import</span> <span class="nn">math</span>
     
     <span class="n">_</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="n">image_width</span><span class="p">,</span> <span class="n">image_depth</span> <span class="o">=</span> <span class="n">x_tensor</span><span class="o">.</span><span class="n">shape</span>
@@ -12533,11 +12535,11 @@ Keep Prob Tests Passed.
 <span class="sd">    : return: A 2-D tensor where the second dimension is num_outputs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
+    <span class="c1"># Code comes almost entirely out of class notes</span>
     <span class="kn">import</span> <span class="nn">math</span>
 
     <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
-    <span class="c1">#return tf.layers.dense(x_tensor, num_outputs, activation=tf.nn.relu)</span>
     
     <span class="n">batch_size</span> <span class="o">=</span> <span class="n">x_tensor</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">as_list</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
     
@@ -12604,6 +12606,7 @@ Keep Prob Tests Passed.
 <span class="sd">    : return: A 2-D tensor where the second dimension is num_outputs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
+    <span class="c1"># Code comes almost entirely out of class notes</span>
     <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
     
     <span class="n">batch_size</span> <span class="o">=</span> <span class="n">x_tensor</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">as_list</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
@@ -12690,6 +12693,9 @@ Keep Prob Tests Passed.
     <span class="c1">#    Play around with different number of outputs, kernel size and stride</span>
     <span class="c1"># Function Definition from Above:</span>
     <span class="c1">#    conv2d_maxpool(x_tensor, conv_num_outputs, conv_ksize, conv_strides, pool_ksize, pool_strides)</span>
+    <span class="c1"># Many settings were chosen based on reading tips in the forum after my hours of debugging failed me.</span>
+    <span class="c1"># Bug was in normalization the whole time (womp womp). But these settings still yielded best results.</span>
+    <span class="c1"># Code sourced almost entirely from class notes.</span>
     
     <span class="n">kernel</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;conv1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
